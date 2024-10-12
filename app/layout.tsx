@@ -54,8 +54,10 @@ export default function RootLayout({
                 href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
                 title="nextui.org homepage"
               >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">NextUI</p>
+                <span className="text-default-600">
+                  {new Date().getFullYear()}@
+                </span>
+                <p className="text-primary font-bold">VE Line</p>
               </Link>
             </footer>
           </div>

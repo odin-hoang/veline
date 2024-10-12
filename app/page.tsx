@@ -26,14 +26,21 @@ export default function Home() {
       </div>
 
       <div className="flex gap-3">
-        <Button variant="shadow">Click me!</Button>
+        <Link
+          isExternal
+          className={buttonStyles({ variant: "bordered", radius: "full" })}
+          href={siteConfig.links.github}
+        >
+          {/* <GithubIcon size={20} /> */}
+          Voting
+        </Link>
         <NextLink
           className={buttonStyles({
             color: "primary",
             radius: "full",
             variant: "shadow",
           })}
-          href={siteConfig.navItems[1].href}
+          href={siteConfig.navItems[0].href}
         >
           Start Now
         </NextLink>
@@ -48,9 +55,14 @@ export default function Home() {
       </div>
 
       <div className="mt-8">
-        <Snippet hideCopyButton hideSymbol variant="bordered">
+        <Snippet
+          hideCopyButton
+          hideSymbol
+          variant="bordered"
+          className="opacity-50"
+        >
           <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
+            Just join the community and start building your financial future.
           </span>
         </Snippet>
       </div>
