@@ -1,3 +1,4 @@
+"use client";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -26,8 +27,10 @@ import {
   Logo,
 } from "@/components/icons";
 import React from "react";
-
+import { usePathname } from "next/navigation";
 export const Navbar = () => {
+  const pathname = usePathname();
+  console.log("pathname", pathname);
   return (
     <NextUINavbar
       maxWidth="xl"
@@ -39,9 +42,10 @@ export const Navbar = () => {
           "relative",
           "h-full",
           "items-center",
+          "justify-center",
           "data-[active=true]:after:content-['']",
           "data-[active=true]:after:absolute",
-          "data-[active=true]:after:bottom-0",
+          "data-[active=true]:after:-bottom-1",
           "data-[active=true]:after:left-0",
           "data-[active=true]:after:right-0",
           "data-[active=true]:after:h-[2px]",
@@ -59,7 +63,7 @@ export const Navbar = () => {
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
+            <NavbarItem key={item.href} isActive={item.href === pathname}>
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
