@@ -28,6 +28,7 @@ import {
 } from "@/components/icons";
 import React from "react";
 import { usePathname } from "next/navigation";
+import ConnectButton from "./wallet";
 export const Navbar = () => {
   const pathname = usePathname();
   console.log("pathname", pathname);
@@ -96,7 +97,7 @@ export const Navbar = () => {
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden md:flex">
-          <Button
+          {/* <Button
             isExternal
             as={Link}
             className="text-sm font-normal text-default-600 bg-default-100"
@@ -105,7 +106,8 @@ export const Navbar = () => {
             variant="flat"
           >
             Sponsor
-          </Button>
+          </Button> */}
+          <ConnectButton></ConnectButton>
         </NavbarItem>
       </NavbarContent>
 
